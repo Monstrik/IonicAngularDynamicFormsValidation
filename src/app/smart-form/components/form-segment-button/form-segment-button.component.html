@@ -1,0 +1,19 @@
+<ion-item text-center no-lines>
+  <ion-label [attr.for]="config.name">{{config.label}}</ion-label>
+</ion-item>
+<ion-item [formGroup]="group">
+  <ion-segment
+
+    [formControlName]="config.name"
+    [id]="config.name"
+    color="primary">
+
+    <ion-segment-button *ngFor="let opt of config.options"
+                        [value]="opt.id">
+      {{opt.name}}
+
+    </ion-segment-button>
+  </ion-segment>
+
+</ion-item>
+

@@ -1,0 +1,10 @@
+<ion-list radio-group [formGroup]="group">
+  <ion-list-header>
+    {{config.label}}
+  </ion-list-header>
+
+  <ion-item *ngFor="let opt of config.options">
+    <ion-label>{{opt.name}}</ion-label>
+    <ion-radio [value]="opt.id"></ion-radio>
+  </ion-item>inline
+</ion-list>

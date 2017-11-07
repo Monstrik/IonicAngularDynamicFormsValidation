@@ -1,0 +1,33 @@
+<ion-list class="smart-form-container">
+
+  <ion-list-header *ngIf="selectAllTogglesButton" text-right no-lines>
+    <ion-label item-content>Select/Deselect All</ion-label>
+    <ion-toggle item-content [(ngModel)]="selectAllTogglesButtonToggleValue" (ionChange)="toggleAllToggles()">
+    </ion-toggle>
+  </ion-list-header>
+  <!--<ion-item >-->
+  <!---->
+  <!--</ion-item>-->
+  <ion-item *ngIf="selectAllTogglesButton"> &nbsp;</ion-item>
+
+  <form
+    [formGroup]="form"
+    (submit)="handleSubmit($event)">
+
+    <ng-container
+      *ngFor="let field of config;"
+      smartField
+      [config]="field"
+      (onchange)="handleUpdate($event)"
+      [group]="form">
+    </ng-container>
+  </form>
+</ion-list>
+
+
+<!--<ion-grid text-center>-->
+<!--<ion-row>-->
+<!--<ion-col width-25>One</ion-col>-->
+<!--<ion-col width-25 offset-50>Two</ion-col>-->
+<!--</ion-row>-->
+<!--</ion-grid>-->

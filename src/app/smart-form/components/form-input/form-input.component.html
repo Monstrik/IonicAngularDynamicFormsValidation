@@ -1,0 +1,56 @@
+<ion-item
+  class="dynamic-field form-input"
+  [formGroup]="group">
+  <ion-label floating [attr.for]="config.name">{{config.label}}</ion-label>
+  <ion-input
+    [formControlName]="config.name"
+    [id]="config.name"
+    [attr.placeholder]="config.placeholder"
+    type="text"
+  ></ion-input>
+  <!--[type]="question.type"-->
+</ion-item>
+
+
+<!--<div [formGroup]="form" [ngSwitch]="question.controlType">-->
+
+<!--<ion-item *ngSwitchCase="'textbox'">-->
+<!--<ion-label floating [attr.for]="question.key">{{question.label}}</ion-label>-->
+<!--<ion-input [formControlName]="question.key" [id]="question.key" [type]="question.type">-->
+<!--&lt;!&ndash;(change)=update('question.key')&ndash;&gt;-->
+<!--&lt;!&ndash;[class.invalid]="!dispatchForm.controls.callLocationFacility.valid && (dispatchForm.controls.callLocationFacility.dirty || submitAttempt)">&ndash;&gt;-->
+<!--</ion-input>-->
+<!--</ion-item>-->
+
+<!--<ion-item *ngSwitchCase="'datebox'">-->
+<!--<ion-label floating [attr.for]="question.key">{{question.label}}</ion-label>-->
+<!--<ion-datetime [formControlName]="question.key" [id]="question.key" displayFormat="h:mm a MMM D, YYYY"-->
+<!--pickerFormat="h:mm a MMM, D YYYY" min="2016">-->
+
+<!--</ion-datetime>-->
+<!--</ion-item>-->
+<!--<ion-item *ngSwitchCase="'timebox'">-->
+<!--<ion-label floating [attr.for]="question.key">{{question.label}}</ion-label>-->
+<!--<ion-datetime [formControlName]="question.key" [id]="question.key" displayFormat="h:mm a MMM D, YYYY"-->
+<!--pickerFormat="h:mm a">-->
+
+<!--</ion-datetime>-->
+<!--</ion-item>-->
+<!--<ion-item *ngSwitchCase="'dropdown'">-->
+<!--<ion-label [attr.for]="question.key">{{question.label}}</ion-label>-->
+<!--<ion-select (ionChange)="update()" [formControlName]="question.key" [id]="question.key" [multiple]="question.multiple">-->
+<!--<ion-option *ngFor="let opt of question.options" [value]="opt.id">{{opt.name}}</ion-option>-->
+<!--</ion-select>-->
+<!--</ion-item>-->
+<!--<ion-item *ngSwitchCase="'button'" no-line>-->
+<!--<button ion-button [name]="question.key" [id]="question.key" (click)=update()>-->
+<!--{{question.label}}-->
+<!--</button>-->
+<!--</ion-item>-->
+
+<!--<ion-item *ngSwitchCase="'toggle'">-->
+<!--<ion-label [attr.for]="question.key">{{question.label}}</ion-label>-->
+<!--<ion-toggle (ionChange)="update()" [formControlName]="question.key" [id]="question.key"></ion-toggle>-->
+<!--</ion-item>-->
+
+<!--</div>-->

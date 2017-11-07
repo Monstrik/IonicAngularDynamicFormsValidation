@@ -1,14 +1,33 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      Ionic Blank
+      Dynamic Form with validation
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+
+  <p class="center">
+    <ion-icon class="large lighter" primary name="contact"></ion-icon>
   </p>
+
+  <div col-12 *ngIf="dynFormSection">
+
+    <ion-item>
+      <ion-label color="primary"> {{dynFormSection.title}}</ion-label>
+    </ion-item>
+
+    <smart-form *ngIf="dynFormSection.fields"
+                [config]="dynFormSection.fields"
+                #form1
+                (valueUpdate)="updateFromDynamicForm($event)">
+    </smart-form>
+
+    <button ion-button (click)="validate()">Validate</button>
+
+  </div>
+
 </ion-content>
+
+

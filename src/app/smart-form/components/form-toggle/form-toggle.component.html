@@ -1,0 +1,9 @@
+<ion-item
+  class="dynamic-field form-input"
+  [formGroup]="group">
+  <ion-label [attr.for]="config.name">{{config.label}}</ion-label>
+  <ion-toggle
+    [formControlName]="config.name"
+    [id]="config.name" >
+  </ion-toggle>
+</ion-item>

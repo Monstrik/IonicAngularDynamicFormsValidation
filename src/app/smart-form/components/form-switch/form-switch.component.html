@@ -1,0 +1,21 @@
+<ion-item class="dynamic-field form-select" [formGroup]="group">
+  <ion-label [attr.for]="config.name">{{config.label}}</ion-label>
+
+  <div class="button-bar"
+       [formControlName]="config.name"
+       [id]="config.name" >
+    <a
+      class="button icon-left"
+      id="config.options[0].id"
+      ng-class="selected == 1 ? 'button-assertive' : 'button-outline'"
+      ng-click="select(1)">{{config.options[0].name}}
+    </a>
+
+    <a
+      class="button icon-left"
+      id="config.options[1].id"
+      ngClass="selected == 2 ? 'button-assertive' : 'button-outline'"
+      lick="select(2)">{{config.options[1].name}}</a>
+  </div>
+
+</ion-item>

@@ -1,0 +1,42 @@
+<ion-grid class="dynamic-field form-input"
+          [formGroup]="group">
+  <ion-row  id="{{'rowFor:' + config.name}}">
+    <ion-col>
+      <ion-item  class="invalidItem">
+        <ion-label
+          [attr.for]="config.name">
+          {{config.label}}
+        </ion-label>
+        <ion-datetime
+          [formControlName]="config.name"
+          [id]="config.name"
+          [attr.placeholder]="config.placeholder"
+          displayFormat="MM/DD/YYYY"
+          pickerFormat="MM/DD/YYYY"
+          [max]="config.max">
+        </ion-datetime>
+      </ion-item>
+
+
+      <!--<ion-item>-->
+      <!--<ion-label item-content-->
+
+      <!--[attr.for]="config.name"-->
+      <!--{{config.label}}-->
+      <!--</ion-label>-->
+      <!--</ion-item>-->
+      <!--</ion-col>-->
+      <!--<ion-col>-->
+      <!--<ion-item text-center>-->
+      <!--<ion-datetime item-content-->
+      <!--[formControlName]="config.name"-->
+      <!--[id]="config.name"-->
+      <!--[attr.placeholder]="config.placeholder"-->
+      <!--displayFormat="MM/DD/YYYY"-->
+      <!--pickerFormat="MM/DD/YYYY"-->
+      <!--[max]="config.max">-->
+      <!--</ion-datetime>-->
+      <!--</ion-item>-->
+    </ion-col>
+  </ion-row>
+</ion-grid>

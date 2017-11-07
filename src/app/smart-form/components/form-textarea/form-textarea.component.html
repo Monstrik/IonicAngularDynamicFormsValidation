@@ -1,0 +1,11 @@
+<ion-item
+  class="dynamic-field form-input"
+  [formGroup]="group">
+  <ion-label floating [attr.for]="config.name">{{config.label}}</ion-label>
+  <ion-textarea
+    [formControlName]="config.name"
+    [id]="config.name"
+    [attr.placeholder]="config.placeholder">
+  </ion-textarea>
+</ion-item>
+

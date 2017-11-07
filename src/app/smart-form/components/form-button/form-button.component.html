@@ -1,0 +1,10 @@
+<ion-item no-line
+          class="dynamic-field form-button"
+          [formGroup]="group">
+  <button ion-button
+          [name]="config.name"
+          [id]="config.name"
+          [disabled]="config.disabled">
+    {{config.label}}
+  </button>
+</ion-item>

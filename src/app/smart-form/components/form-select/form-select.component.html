@@ -1,0 +1,32 @@
+<!--<div class="{{'class' + config.name.split(':')[0]}}">-->
+<ion-item class="dynamic-field form-select" [formGroup]="group">
+
+  <ion-label [attr.for]="config.name">{{config.label}}</ion-label>
+  <ion-select class="{{config.multiple ? 'smart-form-multi':'smart-form-single'}}"
+
+              #yourSelect
+              (ionChange)="onChange()"
+              [formControlName]="config.name"
+              [id]="config.name"
+              [multiple]="config.multiple"
+              [interface]="alert"
+  >
+
+    <!--[interface]="config.multiple ? 'alert' : 'action-sheet'"-->
+    <!--<ion-option *ngIf="config.placeholder" value="">{{config.placeholder}}</ion-option>-->
+    <ion-option *ngFor="let opt of config.options"
+                [value]="opt.id"
+                (ionSelect)="onSelect($event)"
+    >
+      {{opt.name}}
+    </ion-option>
+  </ion-select>
+</ion-item>
+<!--</div>-->
+
+<div *ngIf="group.get(config.name).invalid && (group.get(config.name).dirty || group.get(config.name).touched)"
+     class="note danger">
+  <div *ngIf="group.get(config.name).hasError('required')">
+    This field is required
+  </div>
+</div>

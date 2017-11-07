@@ -1,0 +1,46 @@
+<!--<ion-item-->
+  <!--class="dynamic-field form-input"-->
+  <!--[formGroup]="group">-->
+  <!--<ion-label item-content [attr.for]="config.name">{{config.label}}</ion-label>-->
+  <!--<ion-datetime item-content-->
+                <!--[formControlName]="config.name"-->
+                <!--[id]="config.name"-->
+                <!--[attr.placeholder]="config.placeholder"-->
+                <!--displayFormat="HH:mm"-->
+                <!--pickerFormat="HH:mm">-->
+  <!--</ion-datetime>-->
+  <!--<button ion-button item-content-->
+          <!--(click)="setNowTime()">-->
+    <!--Now-->
+  <!--</button>-->
+<!--</ion-item>-->
+
+<ion-grid class="dynamic-field form-input"
+          [formGroup]="group">
+  <ion-row>
+    <ion-col>
+      <ion-item>
+      <ion-label item-content [attr.for]="config.name">{{config.label}}</ion-label>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item text-center>
+      <ion-datetime item-content
+                    [formControlName]="config.name"
+                    [id]="config.name"
+                    [attr.placeholder]="config.placeholder"
+                    displayFormat="HH:mm"
+                    pickerFormat="HH:mm">
+      </ion-datetime>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item >
+      <button ion-button  block item-content outline
+              (click)="setNowTime()">
+        Now
+      </button>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-grid>

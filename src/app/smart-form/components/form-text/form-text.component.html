@@ -1,0 +1,24 @@
+<ion-item [formGroup]="group">
+  <ion-label floating [attr.for]="config.name">{{config.label}}</ion-label>
+  <ion-input
+    [formControlName]="config.name"
+    [id]="config.name"
+    [attr.placeholder]="config.placeholder"
+    type="text"
+  >
+  </ion-input>
+</ion-item>
+<div *ngIf="group.get(config.name).invalid && (group.get(config.name).dirty || group.get(config.name).touched)"
+     class="note danger">
+  <div *ngIf="group.get(config.name).hasError('required')">
+    This field is required
+  </div>
+  <div *ngIf="group.get(config.name).hasError('minlength')">
+    too short
+  </div>
+  <div *ngIf="group.get(config.name).hasError('maxlength')">
+    too long
+  </div>
+</div>
+
+
